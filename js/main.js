@@ -3,7 +3,7 @@ import {OrbitControls} from 'threejs/examples/jsm/controls/OrbitControls.js';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 function main() {
-  const canvas = document.querySelector('#c');
+  const canvas = document.querySelector('#renderCanvas');
   const renderer = new THREE.WebGLRenderer({canvas});
 
   const fov = 45;
