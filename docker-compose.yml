@@ -1,9 +1,9 @@
 version: '3.9'
 services:
-  game-js:
+  models-3d:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: game-js
+    container_name: models-3d
     volumes:
-       - .:/usr/src/gamejs
+       - .:/usr/src/models3d

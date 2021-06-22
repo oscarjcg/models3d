@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import {OrbitControls} from 'threejs/examples/jsm/controls/OrbitControls.js';
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 function main() {
@@ -19,7 +19,7 @@ function main() {
 
   const scene = new THREE.Scene();
   scene.background = new THREE.Color('black');
-/*
+
   {
     const planeSize = 40;
 
@@ -40,7 +40,7 @@ function main() {
     mesh.rotation.x = Math.PI * -.5;
     scene.add(mesh);
   }
-  */
+  
 
   {
     const skyColor = 0xB1E1FF;  // light blue

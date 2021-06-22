@@ -1,3 +1,3 @@
 FROM node:latest as node
 
-WORKDIR /usr/src/gamejs
+WORKDIR /usr/src/models3d
