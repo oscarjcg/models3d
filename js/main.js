@@ -18,7 +18,7 @@ function main() {
   controls.update();
 
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(255, 202, 202);
+  scene.background = new THREE.Color("yellow");
 
   /*
   {
