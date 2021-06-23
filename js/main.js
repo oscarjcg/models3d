@@ -46,6 +46,11 @@ function main() {
   }
   */
   
+  {
+    // Axis
+    const axesHelper = new THREE.AxesHelper( 5 );
+    scene.add( axesHelper );
+  }
 
   {
     // Light
@@ -103,7 +108,7 @@ function main() {
 
 						const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
 
-						scene.background = envMap;
+						//scene.background = envMap; // Show background
 						scene.environment = envMap;
 
 						texture.dispose();
