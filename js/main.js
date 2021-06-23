@@ -108,7 +108,7 @@ function main() {
 
 						const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
 
-						//scene.background = envMap; // Show background
+						scene.background = envMap; // Show background
 						scene.environment = envMap;
 
 						texture.dispose();
