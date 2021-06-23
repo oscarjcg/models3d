@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
+
 
 function main() {
   const canvas = document.querySelector('#renderCanvas');
@@ -91,6 +93,25 @@ function main() {
   }
 
   {
+    new RGBELoader()
+					.setDataType( THREE.UnsignedByteType )
+					.setPath( 'assets/' )
+					.load( 'studio.hdr', function ( texture ) {
+
+						const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
+
+						scene.background = envMap;
+						scene.environment = envMap;
+
+						texture.dispose();
+						pmremGenerator.dispose();
+
+						render();
+
+					} );
+  }
+
+  {
     const gltfLoader = new GLTFLoader();
     gltfLoader.load('/models3d/microwave.glb', (gltf) => {
       const root = gltf.scene;
@@ -112,6 +133,8 @@ function main() {
       controls.update();
     });
   }
+
+  
 
   function resizeRendererToDisplaySize(renderer) {
     const canvas = renderer.domElement;
