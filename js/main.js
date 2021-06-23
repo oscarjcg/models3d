@@ -93,6 +93,9 @@ function main() {
   }
 
   {
+    const pmremGenerator = new THREE.PMREMGenerator( renderer );
+    pmremGenerator.compileEquirectangularShader();
+
     new RGBELoader()
 					.setDataType( THREE.UnsignedByteType )
 					.setPath( 'assets/' )
