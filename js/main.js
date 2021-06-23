@@ -20,7 +20,9 @@ function main() {
   const scene = new THREE.Scene();
   scene.background = new THREE.Color('black');
 
+  /*
   {
+    // Plane
     const planeSize = 40;
 
     const loader = new THREE.TextureLoader();
@@ -40,9 +42,11 @@ function main() {
     mesh.rotation.x = Math.PI * -.5;
     scene.add(mesh);
   }
+  */
   
 
   {
+    // Light
     const skyColor = 0xB1E1FF;  // light blue
     const groundColor = 0xB97A20;  // brownish orange
     const intensity = 1;
@@ -51,6 +55,7 @@ function main() {
   }
 
   {
+    // Light
     const color = 0xFFFFFF;
     const intensity = 1;
     const light = new THREE.DirectionalLight(color, intensity);
