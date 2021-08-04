@@ -5,6 +5,10 @@ import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
 
 
 function main() {
+  // params
+  var queryDict = {}
+  location.search.substr(1).split("&").forEach(function(item) {queryDict[item.split("=")[0]] = item.split("=")[1]})
+
   const canvas = document.querySelector('#renderCanvas');
   const renderer = new THREE.WebGLRenderer({canvas});
 
@@ -120,8 +124,14 @@ function main() {
   }
 
   {
+    var modelName = "microwave.glb";
+    // Get model name from params
+    if (queryDict.model != undefined) {
+      modelName = queryDict.model;
+    }
+
     const gltfLoader = new GLTFLoader();
-    gltfLoader.load('/models3d/microwave.glb', (gltf) => {
+    gltfLoader.load('/models3d/' + modelName, (gltf) => {
       const root = gltf.scene;
       scene.add(root);
 

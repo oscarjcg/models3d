@@ -1,3 +1,5 @@
 node_modules
 models3d
 dist
+.idea/
+.DS_Store
