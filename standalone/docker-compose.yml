@@ -1,0 +1,12 @@
+services:
+  web:
+    image: nginx:alpine
+    container_name: models-3d-web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ../index.html:/usr/share/nginx/html/index.html:ro
+      - ../dist:/usr/share/nginx/html/dist:ro
+      - ../assets:/usr/share/nginx/html/assets:ro
+      - ../models3d:/usr/share/nginx/html/models3d:ro

@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
+import { HDRLoader } from 'three/examples/jsm/loaders/HDRLoader.js';
 
 
 function main() {
@@ -11,6 +11,7 @@ function main() {
 
   const canvas = document.querySelector('#renderCanvas');
   const renderer = new THREE.WebGLRenderer({canvas});
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
 
   const fov = 45;
   const aspect = 2;  // the canvas default
@@ -105,8 +106,7 @@ function main() {
     const pmremGenerator = new THREE.PMREMGenerator( renderer );
     pmremGenerator.compileEquirectangularShader();
 
-    new RGBELoader()
-					.setDataType( THREE.UnsignedByteType )
+    new HDRLoader()
 					.setPath( 'assets/' )
 					.load( 'studio.hdr', function ( texture ) {
 
